@@ -6,7 +6,6 @@
     <title>Black Rhino Figurine from Zimbabwe</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
     <style>
-        /* [Previous styles remain the same until hero-image class] */
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         
         :root {
@@ -56,10 +55,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(
-                rgba(0, 0, 0, 0.4),
-                rgba(0, 0, 0, 0.6)
-            );
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
         }
 
         .section-card {
@@ -93,7 +89,7 @@
 <body class="min-h-screen">
     <!-- Hero Section with Full-width Image -->
     <header class="hero-section mb-16">
-        <img src="rhino_image.jpg" alt="Black Rhino" class="hero-image"/>
+        <img src="rhino_image.jpg" alt="Black Rhino" class="hero-image" />
         <div class="hero-overlay"></div>
         <div class="absolute inset-0 flex flex-col justify-center items-center text-center p-8 z-10">
             <h1 class="emirates-title text-5xl sm:text-6xl mb-4 text-white">
@@ -106,83 +102,82 @@
         <div class="absolute bottom-0 w-full gradient-overlay"></div>
     </header>
 
-        <div class="space-y-8">
-            <!-- Introduction Card -->
-            <section class="section-card p-8">
-                <h2 class="emirates-title text-2xl mb-6 gold-accent">Artisan's Masterpiece</h2>
-                <p class="text-gray-300 leading-relaxed">
-                    Brought to the Group IT department by <span class="font-semibold teal-accent">Keith Satuku</span>, this art piece represents some of the stone sculpture works in Zimbabwe. Hand-carved from rare <span class="gold-accent font-semibold">verdite stone</span>, it embodies strength and resilience.
-                </p>
-            </section>
+    <div class="space-y-8">
+        <!-- Introduction Card -->
+        <section class="section-card p-8">
+            <h2 class="emirates-title text-2xl mb-6 gold-accent">Artisan's Masterpiece</h2>
+            <p class="text-gray-300 leading-relaxed">
+                Brought to the Group IT department by <span class="font-semibold teal-accent">Keith Satuku</span>, this art piece represents some of the stone sculpture works in Zimbabwe. Hand-carved from rare <span class="gold-accent font-semibold">verdite stone</span>, it embodies strength and resilience.
+            </p>
+        </section>
 
-            <!-- Verdite Stone Section -->
-            <section class="section-card p-8">
-                <h2 class="emirates-title text-2xl mb-6 gold-accent">The Stone of Africa</h2>
-                <p class="text-gray-300 leading-relaxed mb-4">
-                    Verdite stone, a semi-precious mineral predominantly found in Zimbabwe, has been treasured for centuries. This rare stone carries the legacy of African artistry and cultural significance.
-                </p>
-                <p class="text-gray-300 leading-relaxed">
-                    Its vibrant green hues symbolize growth and vitality, making it a perfect medium for capturing the essence of African wildlife.
-                </p>
-            </section>
+        <!-- Verdite Stone Section -->
+        <section class="section-card p-8">
+            <h2 class="emirates-title text-2xl mb-6 gold-accent">The Stone of Africa</h2>
+            <p class="text-gray-300 leading-relaxed mb-4">
+                Verdite stone, a semi-precious mineral predominantly found in Zimbabwe, has been treasured for centuries. This rare stone carries the legacy of African artistry and cultural significance.
+            </p>
+            <p class="text-gray-300 leading-relaxed">
+                Its vibrant green hues symbolize growth and vitality, making it a perfect medium for capturing the essence of African wildlife.
+            </p>
+        </section>
 
-            <!-- Black Rhino Symbolism -->
-            <section class="section-card p-8">
-                <h2 class="emirates-title text-2xl mb-6 gold-accent">Symbol of Strength</h2>
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div>
-                        <h3 class="text-xl mb-4 teal-accent">Natural Heritage</h3>
-                        <p class="text-gray-300 leading-relaxed">
-                            The black rhino, critically endangered yet resilient, represents the enduring spirit of African wildlife. Its presence in Zimbabwe's landscapes tells a story of survival and adaptation.
-                        </p>
-                    </div>
-                    <div>
-                        <h3 class="text-xl mb-4 teal-accent">Conservation Journey</h3>
-                        <p class="text-gray-300 leading-relaxed">
-                            Through dedicated conservation efforts, Zimbabwe maintains one of Africa's largest black rhino populations, showcasing the country's commitment to wildlife preservation.
-                        </p>
-                    </div>
+        <!-- Black Rhino Symbolism -->
+        <section class="section-card p-8">
+            <h2 class="emirates-title text-2xl mb-6 gold-accent">Symbol of Strength</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl mb-4 teal-accent">Natural Heritage</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        The black rhino, critically endangered yet resilient, represents the enduring spirit of African wildlife. Its presence in Zimbabwe's landscapes tells a story of survival and adaptation.
+                    </p>
                 </div>
-            </section>
-
-            <!-- Conservation Efforts -->
-            <section class="section-card p-8">
-                <h2 class="emirates-title text-2xl mb-6 gold-accent">Preserving Legacy</h2>
-                <div class="space-y-6">
-                    <div class="pl-4 accent-border">
-                        <h3 class="text-lg font-semibold mb-2 text-gray-200">Save Valley Conservancy</h3>
-                        <p class="text-gray-300">Providing protected habitats for black rhinos and other endangered species.</p>
-                    </div>
-                    <div class="pl-4 accent-border">
-                        <h3 class="text-lg font-semibold mb-2 text-gray-200">Anti-Poaching Initiative</h3>
-                        <p class="text-gray-300">Dedicated units patrolling national parks and wildlife reserves.</p>
-                    </div>
-                    <div class="pl-4 accent-border">
-                        <h3 class="text-lg font-semibold mb-2 text-gray-200">Community Programs</h3>
-                        <p class="text-gray-300">Educational initiatives promoting wildlife conservation and sustainable practices.</p>
-                    </div>
+                <div>
+                    <h3 class="text-xl mb-4 teal-accent">Conservation Journey</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        Through dedicated conservation efforts, Zimbabwe maintains one of Africa's largest black rhino populations, showcasing the country's commitment to wildlife preservation.
+                    </p>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!-- Figurine Symbolism -->
-            <section class="section-card p-8">
-                <h2 class="emirates-title text-2xl mb-6 gold-accent">Cultural Significance</h2>
-                <div class="grid md:grid-cols-3 gap-6 text-center">
-                    <div class="p-4">
-                        <h3 class="text-xl mb-3 teal-accent">Strength</h3>
-                        <p class="text-gray-300">Embodying the resilience of Zimbabwe's wildlife and people</p>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="text-xl mb-3 teal-accent">Heritage</h3>
-                        <p class="text-gray-300">Celebrating centuries of sculptural artistry</p>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="text-xl mb-3 teal-accent">Conservation</h3>
-                        <p class="text-gray-300">Promoting wildlife protection and sustainability</p>
-                    </div>
+        <!-- Conservation Efforts -->
+        <section class="section-card p-8">
+            <h2 class="emirates-title text-2xl mb-6 gold-accent">Preserving Legacy</h2>
+            <div class="space-y-6">
+                <div class="pl-4 accent-border">
+                    <h3 class="text-lg font-semibold mb-2 text-gray-200">Save Valley Conservancy</h3>
+                    <p class="text-gray-300">Providing protected habitats for black rhinos and other endangered species.</p>
                 </div>
-            </section>
-        </div>
+                <div class="pl-4 accent-border">
+                    <h3 class="text-lg font-semibold mb-2 text-gray-200">Anti-Poaching Initiative</h3>
+                    <p class="text-gray-300">Dedicated units patrolling national parks and wildlife reserves.</p>
+                </div>
+                <div class="pl-4 accent-border">
+                    <h3 class="text-lg font-semibold mb-2 text-gray-200">Community Programs</h3>
+                    <p class="text-gray-300">Educational initiatives promoting wildlife conservation and sustainable practices.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Figurine Symbolism -->
+        <section class="section-card p-8">
+            <h2 class="emirates-title text-2xl mb-6 gold-accent">Cultural Significance</h2>
+            <div class="grid md:grid-cols-3 gap-6 text-center">
+                <div class="p-4">
+                    <h3 class="text-xl mb-3 teal-accent">Strength</h3>
+                    <p class="text-gray-300">Embodying the resilience of Zimbabwe's wildlife and people</p>
+                </div>
+                <div class="p-4">
+                    <h3 class="text-xl mb-3 teal-accent">Heritage</h3>
+                    <p class="text-gray-300">Celebrating centuries of sculptural artistry</p>
+                </div>
+                <div class="p-4">
+                    <h3 class="text-xl mb-3 teal-accent">Conservation</h3>
+                    <p class="text-gray-300">Promoting wildlife protection and sustainability</p>
+                </div>
+            </div>
+        </section>
     </div>
 </body>
 </html>
