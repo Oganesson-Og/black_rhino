@@ -4,180 +4,271 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Black Rhino Figurine from Zimbabwe</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        
         :root {
-            --accent-teal: #4fd1c5;
-            --emirates-gold: #c9a55c;
+            --primary: #f5f7fa;
+            --secondary: #e0e7ef;
+            --accent: #2ec4b6;
+            --gold: #c9a55c;
+            --glass-bg: rgba(255,255,255,0.7);
+            --glass-blur: 18px;
+            --text-dark: #22223b;
+            --text-light: #4a4e69;
         }
-
+        html {
+            scroll-behavior: smooth;
+        }
         body {
-            font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            background-color: #111827;
-            color: #e5e7eb;
+            font-family: 'Montserrat', 'Poppins', Arial, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c9d6ff 100%);
+            color: var(--text-dark);
+            margin: 0;
+            min-height: 100vh;
         }
-
-        .emirates-title {
-            font-weight: 300;
-            letter-spacing: 0.05em;
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255,255,255,0.85);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 12px rgba(44, 62, 80, 0.07);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.2rem 3vw;
         }
-
-        .gold-accent {
-            color: var(--emirates-gold);
+        .navbar-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            letter-spacing: 0.04em;
         }
-
-        .teal-accent {
-            color: var(--accent-teal);
+        .navbar-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            margin-left: 2rem;
+            font-weight: 500;
+            transition: color 0.2s;
         }
-
-        .hero-section {
+        .navbar-links a:hover {
+            color: var(--gold);
+        }
+        .hero {
             position: relative;
             width: 100vw;
-            margin-left: calc(-50vw + 50%);
-            margin-right: calc(-50vw + 50%);
-            height: 70vh;
-            min-height: 600px;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             overflow: hidden;
         }
-
-        .hero-image {
+        .hero-img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: center;
-        }
-
-        .hero-overlay {
+            filter: brightness(0.85) saturate(1.1);
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
+            z-index: 1;
         }
-
-        .section-card {
-            background: #1f2937;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            transition: transform 0.2s ease-in-out;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        .hero-glass {
+            position: relative;
+            z-index: 2;
+            background: var(--glass-bg);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+            backdrop-filter: blur(var(--glass-blur));
+            border-radius: 24px;
+            padding: 3rem 2.5rem;
+            max-width: 600px;
+            margin: 4rem auto;
+            text-align: center;
+            border: 1.5px solid rgba(200,200,200,0.18);
+            animation: fadeInUp 1.2s cubic-bezier(.23,1.01,.32,1) 0.2s both;
         }
-
-        .section-card:hover {
-            transform: translateY(-2px);
-            border-color: var(--accent-teal);
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-
+        .hero-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+        .hero-sub {
+            font-size: 1.2rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 1.2rem;
+        }
+        .hero-desc {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        .main-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem 4rem 1.5rem;
+        }
+        .card {
+            background: var(--glass-bg);
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(44, 62, 80, 0.09);
+            margin-bottom: 2.5rem;
+            padding: 2.2rem 2rem;
+            border: 1.5px solid rgba(200,200,200,0.13);
+            transition: transform 0.18s, box-shadow 0.18s;
+            animation: fadeInUp 1.1s cubic-bezier(.23,1.01,.32,1) both;
+        }
+        .card:hover {
+            transform: translateY(-6px) scale(1.012);
+            box-shadow: 0 8px 32px rgba(44, 62, 80, 0.13);
+        }
+        .card-title {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--gold);
+            margin-bottom: 1.1rem;
+            letter-spacing: 0.01em;
+        }
+        .card-section-title {
+            color: var(--accent);
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 0.7rem;
+        }
+        .card p {
+            color: var(--text-light);
+            font-size: 1.08rem;
+            line-height: 1.7;
+        }
         .divider {
-            height: 2px;
-            background: linear-gradient(90deg, var(--accent-teal), transparent);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--gold));
+            border-radius: 2px;
+            margin: 1.5rem auto 2rem auto;
         }
-
-        .gradient-overlay {
-            background: linear-gradient(180deg, rgba(17, 24, 39, 0) 0%, rgba(17, 24, 39, 1) 100%);
-            height: 30%;
+        .card-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 1.2rem;
         }
-
-        .accent-border {
-            border-left: 3px solid var(--accent-teal);
+        .card-list-item {
+            flex: 1 1 220px;
+            background: rgba(255,255,255,0.55);
+            border-radius: 12px;
+            padding: 1.2rem 1rem;
+            box-shadow: 0 2px 8px rgba(44, 62, 80, 0.07);
+            transition: box-shadow 0.18s, transform 0.18s;
+        }
+        .card-list-item:hover {
+            box-shadow: 0 6px 18px rgba(44, 62, 80, 0.13);
+            transform: translateY(-3px) scale(1.03);
+        }
+        .card-list-item-title {
+            color: var(--accent);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        @media (max-width: 700px) {
+            .hero-glass { padding: 2rem 1rem; }
+            .main-content { padding: 1.2rem 0.5rem 2rem 0.5rem; }
+            .card { padding: 1.2rem 0.7rem; }
+            .navbar { padding: 1rem 4vw; }
+        }
+        @media (max-width: 500px) {
+            .hero-title { font-size: 2rem; }
+            .card-title { font-size: 1.2rem; }
         }
     </style>
 </head>
-<body class="min-h-screen">
-    <!-- Hero Section with Full-width Image -->
-    <header class="hero-section mb-16">
-        <img src="rhino_image.jpg" alt="Black Rhino" class="hero-image" />
-        <div class="hero-overlay"></div>
-        <div class="absolute inset-0 flex flex-col justify-center items-center text-center p-8 z-10">
-            <h1 class="emirates-title text-5xl sm:text-6xl mb-4 text-white">
-                <span class="text-3xl sm:text-4xl block mb-4">The Heritage Collection</span>
-                Black Rhino Figurine
-            </h1>
-            <div class="divider w-32 mx-auto mb-6"></div>
-            <p class="text-gray-200 text-xl">From the Heart of Zimbabwe</p>
+<body>
+    <nav class="navbar">
+        <div class="navbar-title">Heritage Collection</div>
+        <div class="navbar-links">
+            <a href="#intro">Figurine</a>
+            <a href="#stones">Stones</a>
+            <a href="#symbolism">Symbolism</a>
+            <a href="#conservation">Conservation</a>
+            <a href="#culture">Culture</a>
         </div>
-        <div class="absolute bottom-0 w-full gradient-overlay"></div>
+    </nav>
+    <header class="hero">
+        <img src="rhino.png" alt="Black Rhino" class="hero-img" />
+        <div class="hero-glass">
+            <div class="hero-sub">From the Heart of Zimbabwe</div>
+            <div class="hero-title">Black Rhino Figurine</div>
+            <div class="divider"></div>
+            <div class="hero-desc">A celebration of African artistry, wildlife, and heritage</div>
+        </div>
     </header>
-
-    <div class="space-y-8">
-        <!-- Introduction Card -->
-        <section class="section-card p-8">
-            <h2 class="emirates-title text-2xl mb-6 gold-accent">Black Rhino figurine</h2>
-            <p class="text-gray-300 leading-relaxed">
-                Brought to the Group IT department by <span class="font-semibold teal-accent">Keith Satuku</span>, this art piece represents some of the stone sculpture works in Zimbabwe. Hand-carved from rare <span class="gold-accent font-semibold">verdite stone</span>, it embodies strength and resilience.
-            </p>
+    <main class="main-content">
+        <section class="card" id="intro">
+            <div class="card-title">Black Rhino figurine</div>
+            <p>Brought to the Group IT department by <span style="color:var(--accent);font-weight:600">Keith Satuku</span>, this art piece represents some of the stone sculpture works in Zimbabwe. Hand-carved from rare <span style="color:var(--gold);font-weight:600">verdite stone</span>, it embodies strength and resilience.</p>
         </section>
-
-        <!-- Verdite Stone Section -->
-        <section class="section-card p-8">
-            <h2 class="emirates-title text-2xl mb-6 gold-accent">The Stones of Africa</h2>
-            <p class="text-gray-300 leading-relaxed mb-4">
-                African artisans work with a rich variety of stones, each carrying its own cultural significance and unique visual appeal. Verdite, known for its deep green hues, is one of the most cherished. Fruit serpentine, found in a spectrum of colors ranging from bright yellows and oranges to deep greens, is a favorite for its smooth texture and vibrant patterns. Opal, often associated with spiritual protection, offers stunning iridescent colors that give sculptures a mystical allure. Red jasper, a stone symbolizing strength and endurance, adds bold red tones to art pieces. These stones, along with springstone, lepidolite, and dolomite, have been used for centuries by Zimbabwean sculptors, creating enduring works that reflect the resilience and diversity of African heritage.
-            </p>
-            <p class="text-gray-300 leading-relaxed">
-                Its vibrant green hues symbolize growth and vitality, making it a perfect medium for capturing the essence of African wildlife.
-            </p>
+        <section class="card" id="stones">
+            <div class="card-title">The Stones of Africa</div>
+            <p>African artisans work with a rich variety of stones, each carrying its own cultural significance and unique visual appeal. Verdite, known for its deep green hues, is one of the most cherished. Fruit serpentine, found in a spectrum of colors ranging from bright yellows and oranges to deep greens, is a favorite for its smooth texture and vibrant patterns. Opal, often associated with spiritual protection, offers stunning iridescent colors that give sculptures a mystical allure. Red jasper, a stone symbolizing strength and endurance, adds bold red tones to art pieces. These stones, along with springstone, lepidolite, and dolomite, have been used for centuries by Zimbabwean sculptors, creating enduring works that reflect the resilience and diversity of African heritage.</p>
+            <p>Its vibrant green hues symbolize growth and vitality, making it a perfect medium for capturing the essence of African wildlife.</p>
         </section>
-
-        <!-- Black Rhino Symbolism -->
-        <section class="section-card p-8">
-            <h2 class="emirates-title text-2xl mb-6 gold-accent">Symbol of Strength</h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div>
-                    <h3 class="text-xl mb-4 teal-accent">Natural Heritage</h3>
-                    <p class="text-gray-300 leading-relaxed">
-                        The black rhino, critically endangered yet resilient, represents the enduring spirit of African wildlife. Its presence in Zimbabwe's landscapes tells a story of survival and adaptation.
-                    </p>
+        <section class="card" id="symbolism">
+            <div class="card-title">Symbol of Strength</div>
+            <div class="card-list">
+                <div class="card-list-item">
+                    <div class="card-list-item-title">Natural Heritage</div>
+                    <p>The black rhino, critically endangered yet resilient, represents the enduring spirit of African wildlife. Its presence in Zimbabwe's landscapes tells a story of survival and adaptation.</p>
                 </div>
-                <div>
-                    <h3 class="text-xl mb-4 teal-accent">Conservation Journey</h3>
-                    <p class="text-gray-300 leading-relaxed">
-                        Through dedicated conservation efforts, Zimbabwe maintains one of Africa's largest black rhino populations, showcasing the country's commitment to wildlife preservation.
-                    </p>
+                <div class="card-list-item">
+                    <div class="card-list-item-title">Conservation Journey</div>
+                    <p>Through dedicated conservation efforts, Zimbabwe maintains one of Africa's largest black rhino populations, showcasing the country's commitment to wildlife preservation.</p>
                 </div>
             </div>
         </section>
-
-        <!-- Conservation Efforts -->
-        <section class="section-card p-8">
-            <h2 class="emirates-title text-2xl mb-6 gold-accent">Preserving Legacy</h2>
-            <div class="space-y-6">
-                <div class="pl-4 accent-border">
-                    <h3 class="text-lg font-semibold mb-2 text-gray-200">Save Valley Conservancy</h3>
-                    <p class="text-gray-300">Providing protected habitats for black rhinos and other endangered species.</p>
+        <section class="card" id="conservation">
+            <div class="card-title">Preserving Legacy</div>
+            <div class="card-list">
+                <div class="card-list-item">
+                    <div class="card-list-item-title">Save Valley Conservancy</div>
+                    <p>Providing protected habitats for black rhinos and other endangered species.</p>
                 </div>
-                <div class="pl-4 accent-border">
-                    <h3 class="text-lg font-semibold mb-2 text-gray-200">Anti-Poaching Initiative</h3>
-                    <p class="text-gray-300">Dedicated units patrolling national parks and wildlife reserves.</p>
+                <div class="card-list-item">
+                    <div class="card-list-item-title">Anti-Poaching Initiative</div>
+                    <p>Dedicated units patrolling national parks and wildlife reserves.</p>
                 </div>
-                <div class="pl-4 accent-border">
-                    <h3 class="text-lg font-semibold mb-2 text-gray-200">Community Programs</h3>
-                    <p class="text-gray-300">Educational initiatives promoting wildlife conservation and sustainable practices.</p>
+                <div class="card-list-item">
+                    <div class="card-list-item-title">Community Programs</div>
+                    <p>Educational initiatives promoting wildlife conservation and sustainable practices.</p>
                 </div>
             </div>
         </section>
-
-        <!-- Figurine Symbolism -->
-        <section class="section-card p-8">
-            <h2 class="emirates-title text-2xl mb-6 gold-accent">Cultural Significance</h2>
-            <div class="grid md:grid-cols-3 gap-6 text-center">
-                <div class="p-4">
-                    <h3 class="text-xl mb-3 teal-accent">Strength</h3>
-                    <p class="text-gray-300">Embodying the resilience of Zimbabwe's wildlife and people</p>
+        <section class="card" id="culture">
+            <div class="card-title">Cultural Significance</div>
+            <div class="card-list">
+                <div class="card-list-item">
+                    <div class="card-list-item-title">Strength</div>
+                    <p>Embodying the resilience of Zimbabwe's wildlife and people</p>
                 </div>
-                <div class="p-4">
-                    <h3 class="text-xl mb-3 teal-accent">Heritage</h3>
-                    <p class="text-gray-300">Celebrating centuries of sculptural artistry</p>
+                <div class="card-list-item">
+                    <div class="card-list-item-title">Heritage</div>
+                    <p>Celebrating centuries of sculptural artistry</p>
                 </div>
-                <div class="p-4">
-                    <h3 class="text-xl mb-3 teal-accent">Conservation</h3>
-                    <p class="text-gray-300">Promoting wildlife protection and sustainability</p>
+                <div class="card-list-item">
+                    <div class="card-list-item-title">Conservation</div>
+                    <p>Promoting wildlife protection and sustainability</p>
                 </div>
             </div>
         </section>
-    </div>
+    </main>
 </body>
-</html>
+</html> 
